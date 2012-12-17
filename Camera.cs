@@ -44,7 +44,7 @@ public class Camera2d
           Matrix.CreateTranslation(new Vector3(-_pos.X, -_pos.Y, 0)) *
                                      Matrix.CreateRotationZ(Rotation) *
                                      Matrix.CreateScale(new Vector3(Zoom, Zoom, 1)) *
-                                     Matrix.CreateTranslation(new Vector3(800 * 0.5f, 600 * 0.5f, 0));
+                                     Matrix.CreateTranslation(new Vector3(800 * 0.5f, 450 * 0.5f, 0));// Position du perso sur la cam
         return _transform;
     }
 }

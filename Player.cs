@@ -36,7 +36,7 @@ namespace Game1
             Console.WriteLine(posx);
             Console.WriteLine(posy);
             this.hitbox = new Rectangle(posx, posy, 25, 27);
-            this.hitbox2 = new Rectangle((800 / 2) - 25, (454 / 2) - 27, 25, 27);
+            this.hitbox2 = new Rectangle((220 / 2), (990 / 2), 25, 27);// position perso sur la map
 
 
 
@@ -222,7 +222,7 @@ namespace Game1
                 case direction.Right: this.frameline = 3;
                     this.effect = SpriteEffects.FlipHorizontally; // fait faire un tour au sprite pour le mettre de l'autre sens
                     break;
-                /* permet de mettre les sprites de telle facon que les prites bougent dans les bonne directions*/
+                /* permet de mettre les sprites de telle facon que les sprites bougent dans les bonnes directions*/
 
             }
         }

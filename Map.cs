@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Input;
@@ -16,6 +17,7 @@ namespace Game1
         Vector2 coordonnees;
         Rectangle hitbox3;
 
+        private int[] constructor;
 
 
         public Carre(int posix, int posiy)
@@ -23,12 +25,27 @@ namespace Game1
             this.hitbox3 = new Rectangle(posix, posiy, 32, 32);
             this.texture = null;
             this.coordonnees = Vector2.Zero;
+            //loadConstructor();
         }
 
         public Carre(Texture2D texture, Vector2 cords)
         {
             this.texture = texture;
             this.coordonnees = cords;
+            //loadConstructor();
+        }
+
+        private void loadConstructor()
+        {
+            using (StreamReader reader = File.OpenText("TextFile1.txt"))
+            {
+                int n = Convert.ToInt32(reader.ReadLine());
+                constructor = new int[n];
+
+                string s = reader.ReadLine();
+                for (int i = 0; i < n; ++i)
+                    constructor[i] = Convert.ToInt32(s[i]);
+            }
         }
 
         public Vector2 Coordonnees
@@ -47,11 +64,12 @@ namespace Game1
 
         public void draw(SpriteBatch sol)
         {
-            int[] constructor = new int[] { 1, 0, 1, 0, 1 };
+            int[] constructor = new int[] { 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1};
+            //Taille 22 
             // 3 dimensions : texture, abscisse de la tuile, ordonnée de la tuile, le point 0 est en haut, les x orienté vers la droite et les y vers le bas.
 
-            int hauteur = 5;   // a ne pas spécifier
-            int largeur = 5;   // plus grand que la longueur du tableau !
+            int hauteur = 22;   // a ne pas spécifier
+            int largeur = 22;   // plus grand que la longueur du tableau !
 
             Carre[,] map = new Carre[hauteur, largeur]; // on laisse 2 dimensions au cas ou, futurs modifs...
 

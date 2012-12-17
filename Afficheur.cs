@@ -22,7 +22,7 @@ namespace Game1
         public Afficheur()
         {
 
-            Localplayer = new Player(400, 200);
+            Localplayer = new Player(40, 40);
             carte = new Carre(32, 32);
             Walls = new List<Wall>();
             clickdown = false;

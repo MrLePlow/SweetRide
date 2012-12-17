@@ -35,10 +35,10 @@ namespace Game1
 
         protected override void Initialize()
         {
-            button1 = new MenuButton(new Vector2(100, 200), Content.Load<Texture2D>("jouer2"), Content.Load<Texture2D>("jouer2"), new Rectangle(20, 20, 20, 20));
+            button1 = new MenuButton(new Vector2(100, 600), Content.Load<Texture2D>("jouer2"), Content.Load<Texture2D>("jouer2"), new Rectangle(20, 20, 20, 20));
             base.Initialize();
             this.graphics.PreferredBackBufferWidth = 800;
-            this.graphics.PreferredBackBufferHeight = 600;
+            this.graphics.PreferredBackBufferHeight = 200;
             DepthStencilState dst = new DepthStencilState();
             this.graphics.GraphicsDevice.DepthStencilState = dst;
         }
@@ -92,7 +92,7 @@ namespace Game1
             
             spriteBatch.End();
 
-            spriteBatch.Begin(SpriteSortMode.BackToFront,//On refait un spriteBatch.begin end pour que la map et la cam ne soit pas confondue
+            spriteBatch.Begin(SpriteSortMode.BackToFront,//On refait un spriteBatch.begin / end pour que la map et la cam ne soit pas confondue
                         BlendState.AlphaBlend,
                         null,
                         null,
